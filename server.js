@@ -5,9 +5,9 @@ const app = express();
 class Usuario {
     constructor() {
         this._id = faker.datatype.uuid();
-        this.nombre = faker.name.firstName();
-        this.apellido = faker.name.lastName();
-        this.telefono = faker.phone.number();
+        this.firstName = faker.name.firstName();
+        this.lastName = faker.name.lastName();
+        this.phone = faker.phone.number();
         this.email = faker.internet.email();
         this.password = faker.internet.password();
     }
@@ -16,13 +16,13 @@ class Usuario {
 class Empresa {
     constructor() {
         this._id = faker.datatype.uuid();
-        this.nombre = faker.company.name();
-        this.direccion = {
-            calle: faker.address.street(),
-            ciudad: faker.address.city(),
-            estado: faker.address.state(),
-            cp: faker.address.zipCode(),
-            pais: faker.address.country()
+        this.name = faker.company.name();
+        this.direction = {
+            street: faker.address.street(),
+            city: faker.address.city(),
+            state: faker.address.state(),
+            postalCode: faker.address.postalCode(),
+            country: faker.address.country()
         }
     }
 }
@@ -48,5 +48,5 @@ app.get("/api/user/company", (req, res) => {
     })
 
 app.listen(8000, () => {
-    console.log("El servidor esta corriendo");
+    console.log("El servidor esta corriendooooo");
 });
